@@ -1,5 +1,5 @@
 # DEVELOPPEMENT
-version: '3.1'
+version: "3.1"
 
 services:
   reverseproxy:
@@ -21,7 +21,7 @@ services:
   nodeapi:
     build:
       context: ./
-      dockerfile: Node/Dockerfile
+      dockerfile: node/Dockerfile
     depends_on:
       - postgres
       - redis
@@ -29,15 +29,17 @@ services:
     hostname: nodeapi
     environment:
       - NODE_ENV=development
-      - DB_HOST=postgres  # Container name
-      - DB_PORT=5432      # Default port : 5432
+      - DB_HOST=postgres # Container name
+      - DB_PORT=5432 # Default port : 5432
       - DB_NAME=database
       - DB_USER=admin
       - DB_PASSWORD=admin
-      - REDIS_HOST=redis  # Container name
+      - REDIS_HOST=redis # Container name
     volumes:
       - ./:/home/node/app
-    restart: on-failure   # Restarts container when it fails
+    restart: on-failure # Restarts container when it fails
+    ports:
+      - 3001:8080 # HOST:CLIENT
     # networks:
     #   - network-db
     #   - network-nodejs

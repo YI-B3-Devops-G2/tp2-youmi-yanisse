@@ -10,6 +10,8 @@ USER node
 # Expose port
 EXPOSE 8080
 
+RUN npm install
+
 # Commands at runtime
-# Command "dev" does not work
+# Command "ndev" does not work
 CMD [ "npm", "run", "start" ]
