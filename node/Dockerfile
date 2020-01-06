@@ -10,6 +10,8 @@ USER node
 # Expose port
 EXPOSE 8080
 
+# Copy and install
+COPY package.json .
 RUN npm install
 
 # Commands at runtime
