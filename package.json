@@ -1,5 +1,5 @@
 {
-  "name": "tp2-lesueur-cedric",
+  "name": "tp2-yanisse-youmi",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YI-B3-Devops/tp2-lesueur-cedric.git"
+    "url": "git+https://github.com/YI-B3-Devops/TP2_YOUMI_Yanisse.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/YI-B3-Devops/tp2-lesueur-cedric/issues"
+    "url": "https://github.com/YI-B3-Devops/TP2_YOUMI_Yanisse/issues"
   },
-  "homepage": "https://github.com/YI-B3-Devops/tp2-lesueur-cedric#readme"
+  "homepage": "https://github.com/YI-B3-Devops/TP2_YOUMI_Yanisse#readme"
 }

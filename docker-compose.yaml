@@ -10,8 +10,8 @@ services:
       - nodeapi
     container_name: reverseproxy
     hostname: reverseproxy
-    networks:
-      - network-nodejs
+    # networks:
+    #   - network-nodejs
     volumes:
       - ./Nginx/conf.d/:/etc/nginx/conf.d
     restart: on-failure
@@ -29,7 +29,6 @@ services:
     hostname: nodeapi
     environment:
       - NODE_ENV=development
-      - API_PORT=4040
       - DB_HOST=postgres  # Container name
       - DB_PORT=5432      # Default port : 5432
       - DB_NAME=database
@@ -39,9 +38,9 @@ services:
     volumes:
       - ./:/home/node/app
     restart: on-failure   # Restarts container when it fails
-    networks:
-      - network-db
-      - network-nodejs
+    # networks:
+    #   - network-db
+    #   - network-nodejs
 
   postgres:
     image: postgres:alpine
@@ -57,16 +56,16 @@ services:
     restart: on-failure
     volumes:
       - ./postgres-persistant-data:/data/postgres
-    networks:
-      - network-db
+    # networks:
+    #   - network-db
 
   redis:
     image: redis:alpine3.11
     container_name: redis
     restart: on-failure
-    networks:
-      - network-db
-
-networks:
-  network-db:
-  network-nodejs:
+    # networks:
+    #   - network-db
+#
+# networks:
+#   network-db:
+#   network-nodejs:
